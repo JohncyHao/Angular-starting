@@ -11,5 +11,9 @@
     </li>
     }
   </ul>
-  <app-tasks [name]="selectedUser ? selectedUser.name : ''" />
+  @if (selectedUserId) {
+  <app-tasks [name]="selectedUser.name" />
+  }@else {
+  <p>Please select a user</p>
+  }
 </main>

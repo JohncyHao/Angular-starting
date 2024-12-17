@@ -14,7 +14,8 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
   users = DUMMY_USERS;
-  selectedUserId = 'u1';
+  // 告訴typescript。這是個可有可無的變數
+  selectedUserId?: string;
 
   get selectedUser() {
     return this.users.find((user) => user.id === this.selectedUserId)!;
