@@ -1,0 +1,13 @@
+<div>
+  <button (click)="onSelectUser()">
+    <!-- 因為imgePath是使用get，所以不需要加上()，因為是屬性綁定 -->
+    <img [src]="imagePath" [alt]="user.name" />
+    <span>{{ user.name }}</span>
+    <!-- <img [src]="imagePath()" [alt]="selectedUser().avatar" srcset="" />
+    <span>{{ selectedUser().name }}</span> -->
+
+    <!-- 因為改為使用signal，所以要加上() -->
+    <!-- <img [src]="imagePath()" [alt]="avatar()" srcset="" />
+    <span>{{ name() }}</span> -->
+  </button>
+</div>
