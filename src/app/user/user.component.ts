@@ -73,7 +73,6 @@ export class UserComponent {
   }
 
   onSelectUser() {
-    console.log(`123`, this.user);
     this.select.emit(this.user.id);
     // const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
     // this.selectedUser.set(DUMMY_USERS[randomIndex]);
