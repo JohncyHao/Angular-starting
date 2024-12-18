@@ -1,4 +1,4 @@
-<div>
+<app-card>
   <button [class.active]="isSelected" (click)="onSelectUser()">
     <!-- 因為imgePath是使用get，所以不需要加上()，因為是屬性綁定 -->
     <img [src]="imagePath" [alt]="user.name" />
@@ -10,4 +10,4 @@
     <!-- <img [src]="imagePath()" [alt]="avatar()" srcset="" />
     <span>{{ name() }}</span> -->
   </button>
-</div>
+</app-card>
