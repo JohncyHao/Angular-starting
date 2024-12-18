@@ -11,6 +11,7 @@ import {
   EventEmitter,
   output,
 } from '@angular/core';
+import { User } from './user.model';
 
 // import { DUMMY_USERS } from '../dummy.users';
 
@@ -23,11 +24,11 @@ import {
 // };
 
 // Angular的開發者比較常用這種，但type user也是可以
-interface User {
-  id: string;
-  name: string;
-  avatar: string;
-}
+// interface User {
+//   id: string;
+//   name: string;
+//   avatar: string;
+// }
 
 @Component({
   selector: 'app-user',
@@ -45,6 +46,7 @@ export class UserComponent {
   // @Input({ required: true }) id!: string;
 
   @Input({ required: true }) user!: User;
+  @Input({ required: true }) isSelected!: boolean;
 
   // 可以的話，在後面使用<> 加上型別，這樣的程式碼會更好
   @Output() select = new EventEmitter<string>();
@@ -67,12 +69,11 @@ export class UserComponent {
 
   // 更好的帶網址的寫法
   get imagePath() {
-
     return `assets/users/${this.user.avatar}`;
   }
 
   onSelectUser() {
-    console.log(`123`,this.user);
+    console.log(`123`, this.user);
     this.select.emit(this.user.id);
     // const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
     // this.selectedUser.set(DUMMY_USERS[randomIndex]);

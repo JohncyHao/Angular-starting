@@ -4,16 +4,27 @@
   <ul id="users">
     <!-- track by user.id 用于优化性能，当user.id不变时，不会重新渲染 -->
     @for (user of users; track user.id) {
-
     <li>
       <!-- $event由angular提供的 -->
-      <app-user [user]="user" (select)="onSelectUser($event)" />
+      <app-user
+        [isSelected]="user.id == selectedUserId"
+        [user]="user"
+        (select)="onSelectUser($event)"
+      />
     </li>
     }
+
+    <!-- <li *ngFor="let user of users">
+      <app-user [user]="user" (select)="onSelectUser($event)" />
+    </li> -->
   </ul>
   @if (selectedUserId) {
-  <app-tasks [name]="selectedUser.name" />
+  <app-tasks [userId]="selectedUser.id" [name]="selectedUser.name" />
   }@else {
   <p>Please select a user</p>
   }
+  <!-- <app-tasks *ngIf="selectedUser; else fallback" [name]="selectedUser.name" />
+  <ng-template #fallback>
+    <p>Please select a user</p>
+  </ng-template> -->
 </main>
