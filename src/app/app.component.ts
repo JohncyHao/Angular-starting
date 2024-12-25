@@ -7,8 +7,9 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [HeaderComponent, UserComponent, TasksComponent, CommonModule],
+  standalone: false,
+  // 因為宣告為standalone: false，所以不能再import這些component，而是要透過module的方式來import
+  // imports: [HeaderComponent, UserComponent, TasksComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
