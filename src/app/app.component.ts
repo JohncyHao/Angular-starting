@@ -1,15 +1,8 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from './header/header.component';
-import { UserComponent } from './user/user.component';
 import { DUMMY_USERS } from './dummy.users';
-import { TasksComponent } from './tasks/tasks.component';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  standalone: false,
-  // 因為宣告為standalone: false，所以不能再import這些component，而是要透過module的方式來import
-  // imports: [HeaderComponent, UserComponent, TasksComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

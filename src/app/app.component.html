@@ -13,18 +13,10 @@
       />
     </li>
     }
-
-    <!-- <li *ngFor="let user of users">
-      <app-user [user]="user" (select)="onSelectUser($event)" />
-    </li> -->
   </ul>
   @if (selectedUserId) {
   <app-tasks [userId]="selectedUser.id" [name]="selectedUser.name" />
   }@else {
   <p>Please select a user</p>
   }
-  <!-- <app-tasks *ngIf="selectedUser; else fallback" [name]="selectedUser.name" />
-  <ng-template #fallback>
-    <p>Please select a user</p>
-  </ng-template> -->
 </main>
